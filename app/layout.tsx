@@ -1,5 +1,13 @@
 import Script from "next/script";
 import { TempoInit } from "./tempo-init";
+import "./globals.css";
+import { Providers } from "./providers";
+
+export const metadata = {
+  title: "MeetKorea - Korean Language Learning Platform",
+  description:
+    "Learn practical Korean with native speakers for travel, work, and daily life",
+};
 
 export default function RootLayout({
   children,
@@ -15,7 +23,7 @@ export default function RootLayout({
       <body>
         <Script src="https://api.tempolabs.ai/proxy-asset?url=https://storage.googleapis.com/tempo-public-assets/error-handling.js" />
         <TempoInit />
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
